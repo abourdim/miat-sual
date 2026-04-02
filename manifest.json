@@ -1,0 +1,12 @@
+{
+  "name": "100 Questions About Islam — مائة سؤال عن الإسلام",
+  "short_name": "مائة سؤال",
+  "description": "Interactive trilingual app based on Sheikh Mohammed al-Ghazali's book — 100 Questions About Islam",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#E8F5E9",
+  "theme_color": "#1B5E20",
+  "lang": "ar",
+  "dir": "rtl",
+  "icons": []
+}
