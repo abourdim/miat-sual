@@ -167,12 +167,13 @@ const THEMES = {
 
 // ═══════════════ Q&A DATA (25 questions organized by theme) ═══════════════
 const QA_DATA = [
+  // === حوار بين خالد محمد خالد والشيخ محمد الغزالي ===
   // === BASICS OF ISLAM (5) ===
   {
     id:1, theme:'basics', emoji:'🕌',
-    ar:{q:'ما هو الإسلام؟',a:'الإسلام هو الاستسلام لله وحده بالتوحيد، والانقياد له بالطاعة. هو دين الفطرة الذي يخاطب العقل والقلب معاً. ليس مجرد طقوس بل نظام حياة كامل يشمل العقيدة والعبادة والأخلاق والمعاملات.',verse:'قُلْ إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ',verseRef:'الأنعام ١٦٢'},
-    en:{q:'What is Islam?',a:'Islam is submitting to God alone through monotheism and obeying Him. It is the religion of natural disposition that speaks to both mind and heart. It is not merely rituals but a complete life system encompassing belief, worship, ethics, and social dealings.',verse:'Say: My prayer, my worship, my life, and my death are all for God, Lord of the worlds',verseRef:'Al-An\'am 6:162'},
-    fr:{q:'Qu\'est-ce que l\'Islam ?',a:'L\'Islam est la soumission a Dieu seul par le monotheisme et l\'obeissance a Lui. C\'est la religion de la nature humaine qui s\'adresse a l\'esprit et au coeur. Ce n\'est pas seulement des rituels mais un systeme de vie complet.',verse:'Dis : Ma priere, mon culte, ma vie et ma mort appartiennent a Dieu, Seigneur des mondes',verseRef:'Al-An\'am 6:162'}
+    ar:{q:'ما هو الإسلام؟ ولماذا سمّي كذلك؟',a:'يجيب الغزالي: الإسلام استسلام لله وحده بالتوحيد وانقياد له بالطاعة. هو دين الفطرة الذي يخاطب العقل والقلب معاً. سُمي إسلاماً لأنه يعني السلام مع الله ومع النفس ومع الناس. ليس مجرد طقوس بل مشروع حضاري شامل يبني الفرد والمجتمع.',verse:'قُلْ إِنَّ صَلَاتِي وَنُسُكِي وَمَحْيَايَ وَمَمَاتِي لِلَّهِ رَبِّ الْعَالَمِينَ',verseRef:'الأنعام ١٦٢'},
+    en:{q:'What is Islam? And why is it called that?',a:'Al-Ghazali answers: Islam is submitting to God alone through monotheism. It is the religion of natural disposition speaking to mind and heart. It is called Islam because it means peace with God, with oneself, and with people. Not merely rituals but a comprehensive civilizational project building individual and society.',verse:'Say: My prayer, my worship, my life, and my death are all for God, Lord of the worlds',verseRef:'Al-An\'am 6:162'},
+    fr:{q:'Qu\'est-ce que l\'Islam ? Et pourquoi ce nom ?',a:'Al-Ghazali repond : L\'Islam est la soumission a Dieu seul par le monotheisme. C\'est la religion de la nature humaine parlant a l\'esprit et au coeur. Il s\'appelle Islam car il signifie la paix avec Dieu, avec soi-meme et avec les gens. Pas seulement des rituels mais un projet civilisationnel complet.',verse:'Dis : Ma priere, mon culte, ma vie et ma mort appartiennent a Dieu, Seigneur des mondes',verseRef:'Al-An\'am 6:162'}
   },
   {
     id:2, theme:'basics', emoji:'📖',
@@ -234,9 +235,9 @@ const QA_DATA = [
   // === SOCIETY (5) ===
   {
     id:11, theme:'society', emoji:'👩',
-    ar:{q:'ما مكانة المرأة في الإسلام؟',a:'المرأة في الإسلام شقيقة الرجل. لها حق التعليم والعمل والتملك والميراث. كرّمها الإسلام أمّاً وبنتاً وزوجة. الإسلام أعطى المرأة حقوقها قبل أن تطالب بها الحضارات الأخرى بقرون.',verse:'وَلَهُنَّ مِثْلُ الَّذِي عَلَيْهِنَّ بِالْمَعْرُوفِ',verseRef:'البقرة ٢٢٨'},
-    en:{q:'What is the status of women in Islam?',a:'Woman in Islam is the sister of man. She has the right to education, work, ownership, and inheritance. Islam honored her as mother, daughter, and wife. Islam gave women their rights centuries before other civilizations demanded them.',verse:'And women have rights similar to those over them in kindness',verseRef:'Al-Baqarah 2:228'},
-    fr:{q:'Quelle est la place de la femme en Islam ?',a:'La femme en Islam est la soeur de l\'homme. Elle a le droit a l\'education, au travail, a la propriete et a l\'heritage. L\'Islam l\'a honoree comme mere, fille et epouse. L\'Islam a donne aux femmes leurs droits des siecles avant les autres civilisations.',verse:'Et elles ont des droits similaires a ceux exerces sur elles, selon les convenances',verseRef:'Al-Baqarah 2:228'}
+    ar:{q:'ما موقف الإسلام من المرأة؟',a:'يؤكد الغزالي أن المرأة شقيقة الرجل في الحقوق والواجبات. ينتقد بشدة من يخلطون بين العادات الجاهلية والتعاليم الإسلامية في قضايا المرأة. يدافع عن حقها في التعليم والعمل والمشاركة العامة، ويرى أن تهميشها مخالف لروح القرآن ومقاصده.',verse:'وَلَهُنَّ مِثْلُ الَّذِي عَلَيْهِنَّ بِالْمَعْرُوفِ',verseRef:'البقرة ٢٢٨'},
+    en:{q:'What is Islam\'s position on women?',a:'Al-Ghazali affirms women are equal partners to men in rights and duties. He sharply criticizes confusing pre-Islamic customs with Islamic teachings on women. He defends women\'s right to education, work, and public participation, arguing their marginalization contradicts the Quran\'s spirit and objectives.',verse:'And women have rights similar to those over them in kindness',verseRef:'Al-Baqarah 2:228'},
+    fr:{q:'Quelle est la position de l\'Islam sur la femme ?',a:'Al-Ghazali affirme que la femme est partenaire egale de l\'homme en droits et devoirs. Il critique severement la confusion entre coutumes pre-islamiques et enseignements islamiques. Il defend le droit des femmes a l\'education, au travail et a la participation publique.',verse:'Et elles ont des droits similaires a ceux exerces sur elles, selon les convenances',verseRef:'Al-Baqarah 2:228'}
   },
   {
     id:12, theme:'society', emoji:'🤝',
@@ -252,9 +253,9 @@ const QA_DATA = [
   },
   {
     id:14, theme:'society', emoji:'📚',
-    ar:{q:'ما علاقة الإسلام بالعلم؟',a:'الإسلام دين يحثّ على العلم بقوة. أول كلمة نزلت في القرآن هي "اقرأ". طلب العلم فريضة على كل مسلم ومسلمة. الحضارة الإسلامية قدمت للعالم إنجازات في الطب والرياضيات والفلك والكيمياء. لا تعارض في الإسلام بين العلم والدين.',verse:'اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ',verseRef:'العلق ١'},
-    en:{q:'What is Islam\'s relationship with knowledge?',a:'Islam is a religion that strongly encourages knowledge. The first word revealed in the Quran is "Read." Seeking knowledge is an obligation for every Muslim, male and female. Islamic civilization contributed achievements in medicine, mathematics, astronomy, and chemistry. In Islam, there is no conflict between science and religion.',verse:'Read in the name of your Lord who created',verseRef:'Al-Alaq 96:1'},
-    fr:{q:'Quelle est la relation de l\'Islam avec le savoir ?',a:'L\'Islam est une religion qui encourage fortement le savoir. Le premier mot revele dans le Coran est « Lis ». La quete du savoir est une obligation pour tout musulman. La civilisation islamique a offert au monde des avancees en medecine, mathematiques, astronomie et chimie.',verse:'Lis au nom de ton Seigneur qui a cree',verseRef:'Al-Alaq 96:1'}
+    ar:{q:'ما منزلة العقل في الإسلام؟',a:'يرى الغزالي أن انتهاء عصر الوحي كان بداية عصر العقل. الإسلام رفع مكانة العقل ودعا للتفكر والتدبر. المسلم لا يخاف من المواجهة الفكرية. من المشاكل أن بعض المسلمين يعيشون ذهنياً قبل ألف عام — والإسلام لا يؤخذ من فقهاء البادية.',verse:'اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ',verseRef:'العلق ١'},
+    en:{q:'What is the status of reason in Islam?',a:'Al-Ghazali argues that the end of revelation marks the beginning of the age of reason. Islam elevated intellect and called for reflection. A Muslim should not fear intellectual engagement. The problem is that some Muslims live mentally a thousand years behind — and Islam should not be taken from desert scholars disconnected from the world.',verse:'Read in the name of your Lord who created',verseRef:'Al-Alaq 96:1'},
+    fr:{q:'Quelle est la place de la raison en Islam ?',a:'Al-Ghazali soutient que la fin de la revelation marque le debut de l\'age de la raison. L\'Islam a eleve l\'intellect et appele a la reflexion. Le musulman ne doit pas craindre la confrontation intellectuelle. Le probleme est que certains musulmans vivent mentalement mille ans en arriere.',verse:'Lis au nom de ton Seigneur qui a cree',verseRef:'Al-Alaq 96:1'}
   },
   {
     id:15, theme:'society', emoji:'🌳',
