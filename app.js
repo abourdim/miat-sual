@@ -677,7 +677,7 @@ function renderHome() {
   const d = qa[lang];
   const streak = getStreak();
   const streakHTML = streak > 0 ? `<div class="streak-badge">🔥 ${streak} ${t.streakMsg}</div>` : '';
-  document.getElementById('dailyCard').innerHTML = `
+  (document.getElementById('dailyCard')||{}).innerHTML= `
     <div class="daily-label">${t.dailyLabel}</div>
     <div class="daily-title">${d.q}</div>
     <div class="daily-body">${d.a.substring(0, 120)}...</div>
@@ -713,7 +713,7 @@ function renderHome() {
     {icon:'⭐',tab:'favorites',title:t.tabFavorites,desc:lang==='ar'?'أسئلتك المحفوظة':lang==='fr'?'Vos questions sauvegardees':'Your saved questions'},
     {icon:'📖',tab:'about',title:t.tabAbout,desc:lang==='ar'?'عن الكتاب والمؤلف':lang==='fr'?'Le livre et l\'auteur':'Book & author'},
   ];
-  document.getElementById('homeGrid').innerHTML = sections.map(s => `
+  (document.getElementById('homeGrid')||{}).innerHTML= sections.map(s => `
     <div class="home-card" onclick="document.querySelector('[data-tab=${s.tab}]').click()">
       <span class="hc-icon">${s.icon}</span>
       <div class="hc-title">${s.title}</div>
@@ -761,7 +761,7 @@ function renderQuestions() {
       </div>
     </div>`;
   }).join('');
-  document.getElementById('questionsContainer').innerHTML = themeFilter + cards;
+  (document.getElementById('questionsContainer')||{}).innerHTML= themeFilter + cards;
 }
 
 function filterByTheme(theme) {
@@ -786,7 +786,7 @@ function markRead(id) {
 // ═══════════════ RENDER: SEARCH ═══════════════
 function renderSearch() {
   const t = T[lang];
-  document.getElementById('searchContainer').innerHTML = `
+  (document.getElementById('searchContainer')||{}).innerHTML= `
     <div class="search-bar">
       <input type="text" id="searchInput" class="search-input" placeholder="${t.searchPlaceholder}" oninput="performSearch(this.value)">
       <span class="search-icon">🔍</span>
@@ -861,7 +861,7 @@ let quizState = { active: false, questions: [], current: 0, score: 0, lifelines:
 
 function renderQuiz() {
   const t = T[lang];
-  document.getElementById('quizContainer').innerHTML = `
+  (document.getElementById('quizContainer')||{}).innerHTML= `
     <div class="quiz-intro" id="quizIntro">
       <div class="quiz-intro-icon">🏆</div>
       <div class="quiz-intro-title">${t.quizTitle}</div>
@@ -899,16 +899,16 @@ function renderQuizQuestion() {
   const d = q[lang];
   const pct = ((quizState.current) / quizState.questions.length * 100);
   document.getElementById('quizProgressFill').style.width = pct + '%';
-  document.getElementById('quizScoreDisplay').textContent = `${t.score}: ${quizState.score}/${quizState.questions.length}`;
+  { const _e=document.getElementById('quizScoreDisplay'); if(_e) _e.textContent=`${t.score}: ${quizState.score}/${quizState.questions.length}`; }
   // Lifelines
-  document.getElementById('quizLifelines').innerHTML = `
+  (document.getElementById('quizLifelines')||{}).innerHTML= `
     <button class="lifeline-btn ${quizState.lifelines.fifty?'':'used'}" onclick="useFiftyFifty()" ${quizState.lifelines.fifty?'':'disabled'}>${t.lifeline5050}</button>
     <button class="lifeline-btn ${quizState.lifelines.hint?'':'used'}" onclick="useHint()" ${quizState.lifelines.hint?'':'disabled'}>${t.lifelineHint}</button>
     <button class="lifeline-btn ${quizState.lifelines.verse?'':'used'}" onclick="useVerse()" ${quizState.lifelines.verse?'':'disabled'}>${t.lifelineVerse}</button>
   `;
   // Question
   const diffStars = '⭐'.repeat(q.difficulty);
-  document.getElementById('quizQuestionBox').innerHTML = `
+  (document.getElementById('quizQuestionBox')||{}).innerHTML= `
     <div class="quiz-q-number">${lang==='ar'?'السؤال':'Q'} ${quizState.current + 1}/${quizState.questions.length} ${diffStars}</div>
     <div class="quiz-q-text">${d.q}</div>
     <div class="quiz-options" id="quizOptions">
@@ -1105,7 +1105,7 @@ function renderAbout() {
     }
   };
   const a = about[lang];
-  document.getElementById('aboutContainer').innerHTML = `
+  (document.getElementById('aboutContainer')||{}).innerHTML= `
     <div class="about-disclaimer">
       <div class="about-disclaimer-title">${a.disclaimerTitle}</div>
       <p>${a.disclaimer}</p>
@@ -1164,7 +1164,7 @@ function renderHelp() {
       {title:'🤝 Contribuer',body:'GitHub : github.com/abourdim/miat-sual'},
     ]
   };
-  document.getElementById('helpBody').innerHTML = help[lang].map(h => `
+  (document.getElementById('helpBody')||{}).innerHTML= help[lang].map(h => `
     <div class="help-item">
       <div class="help-item-title">${h.title}</div>
       <div>${h.body}</div>
@@ -1174,7 +1174,7 @@ function renderHelp() {
 
 // ═══════════════ RENDER: DUAS ═══════════════
 function renderDuas() {
-  document.getElementById('duaPanelContent').innerHTML = DUAS.map(d => {
+  (document.getElementById('duaPanelContent')||{}).innerHTML= DUAS.map(d => {
     const dd = d[lang];
     return `
     <div class="dua-item">
