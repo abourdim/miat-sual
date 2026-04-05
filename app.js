@@ -494,7 +494,9 @@ function updateXPDisplay() {
   const xp = getXP();
   const lvl = getLevel();
   const xpBar = document.getElementById('xpBar');
+  if (!xpBar) return;
   const xpText = document.getElementById('xpText');
+  if (!xpText) return;
   if (xpBar) {
     const thresholds = [0,50,150,300,500];
     const nextThreshold = thresholds[lvl.level] || 500;
@@ -580,7 +582,9 @@ document.addEventListener('DOMContentLoaded', () => {
 function initSplash() {
   let count = 5;
   const el = document.getElementById('splashCount');
+  if (!el) return;
   const featuresEl = document.getElementById('splashFeatures');
+  if (!featuresEl) return;
   if (featuresEl) {
     featuresEl.innerHTML = T[lang].splashFeatures.map((f, i) =>
       `<div class="splash-feature" style="animation-delay:${0.3 + i * 0.3}s">${f}</div>`
@@ -594,6 +598,7 @@ function initSplash() {
 }
 function dismissSplash() {
   const s = document.getElementById('splash');
+  if (!s) return;
   if (s) { s.classList.add('hidden'); setTimeout(() => s.style.display = 'none', 500); }
   playSound('click');
 }
@@ -620,6 +625,7 @@ function setLang(l) {
   renderHome(); renderQuestions(); renderSearch(); renderQuiz(); renderFavorites(); renderAbout(); renderHelp(); renderDuas();
   updateXPDisplay();
   const featuresEl = document.getElementById('splashFeatures');
+  if (!featuresEl) return;
   if (featuresEl) {
     featuresEl.innerHTML = T[l].splashFeatures.map((f, i) =>
       `<div class="splash-feature" style="animation-delay:${0.3 + i * 0.3}s">${f}</div>`
@@ -634,6 +640,7 @@ function setTheme(t) {
   localStorage.setItem('ms-theme', t);
   const idx = themes.indexOf(t);
   const el = document.getElementById('themeIcon');
+  if (!el) return;
   if (el) el.textContent = themeIcons[idx];
 }
 function cycleTheme() {
@@ -685,6 +692,7 @@ function renderHome() {
   `;
   // XP bar
   const xpSection = document.getElementById('xpSection');
+  if (!xpSection) return;
   if (xpSection) {
     xpSection.innerHTML = `
       ${streakHTML}
@@ -697,6 +705,7 @@ function renderHome() {
   }
   // Badge display
   const badgeSection = document.getElementById('badgeSection');
+  if (!badgeSection) return;
   if (badgeSection) {
     const earned = getEarnedBadges();
     badgeSection.innerHTML = BADGES.map(b => `
@@ -798,6 +807,7 @@ function renderSearch() {
 function performSearch(query) {
   const q = query.toLowerCase().trim();
   const results = document.getElementById('searchResults');
+  if (!results) return;
   if (!q || q.length < 2) { results.innerHTML = ''; return; }
   const t = T[lang];
   const matches = QA_DATA.filter(qa => {
@@ -826,6 +836,7 @@ function showSearchAnswer(id) {
   const d = qa[lang];
   const t = T[lang];
   const results = document.getElementById('searchResults');
+  if (!results) return;
   results.innerHTML = `
     <div class="search-answer-card">
       <div class="sa-header">${qa.emoji} ${d.q}</div>
@@ -934,6 +945,7 @@ function answerQuiz(idx) {
   document.querySelectorAll('#quizOptions .quiz-opt').forEach(b => b.disabled = true);
   // Feedback
   const fb = document.getElementById('quizFeedback');
+  if (!fb) return;
   fb.classList.remove('hidden');
   if (isCorrect) {
     quizState.score++;
@@ -959,6 +971,7 @@ function endQuiz() {
   const pct = Math.round(quizState.score / quizState.questions.length * 100);
   document.getElementById('quizArena').classList.add('hidden');
   const result = document.getElementById('quizResult');
+  if (!result) return;
   result.classList.remove('hidden');
   let emoji, title;
   if (pct >= 90) { emoji = '🏆'; title = lang==='ar'?'ممتاز! أنت عالم حقيقي!':lang==='fr'?'Excellent ! Vous etes un vrai savant !':'Excellent! You are a true scholar!'; earnBadge('expert'); }
@@ -1003,6 +1016,7 @@ function useHint() {
   const q = quizState.questions[quizState.current];
   const d = q[lang];
   const hintBox = document.getElementById('quizHintBox');
+  if (!hintBox) return;
   if (hintBox) { hintBox.classList.remove('hidden'); hintBox.textContent = '📖 ' + d.hint; }
   document.querySelectorAll('.lifeline-btn')[1].classList.add('used');
   document.querySelectorAll('.lifeline-btn')[1].disabled = true;
@@ -1028,6 +1042,7 @@ function renderFavorites() {
   const t = T[lang];
   const favs = getFavorites();
   const container = document.getElementById('favoritesContainer');
+  if (!container) return;
   if (favs.length === 0) {
     container.innerHTML = `<div class="no-favorites">${t.noFavorites}</div>`;
     return;
@@ -1206,8 +1221,10 @@ function initKeyboardNav() {
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       const helpPanel = document.getElementById('helpPanel');
+      if (!helpPanel) return;
       if (!helpPanel.classList.contains('hidden')) { toggleHelp(); return; }
       const duaPanel = document.getElementById('duaPanel');
+      if (!duaPanel) return;
       if (!duaPanel.classList.contains('hidden')) { toggleDuaPanel(); return; }
       document.querySelectorAll('.qa-card.open').forEach(c => c.classList.remove('open'));
     }
@@ -1223,11 +1240,14 @@ function toggleHelp() { document.getElementById('helpPanel').classList.toggle('h
 function toggleDuaPanel() { document.getElementById('duaPanel').classList.toggle('hidden'); playSound('click'); }
 function showToast(msg) {
   const t = document.getElementById('toast');
+  if (!t) return;
   const m = document.getElementById('toastMsg');
+  if (!m) return;
   if (t && m) { m.textContent = msg; t.style.display = 'block'; setTimeout(() => t.style.display = 'none', 2500); }
 }
 function initScrollTop() {
   const btn = document.getElementById('scrollTop');
+  if (!btn) return;
   window.addEventListener('scroll', () => { if (btn) btn.classList.toggle('visible', window.scrollY > 300); });
 }
 
