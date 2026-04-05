@@ -1316,3 +1316,27 @@ function initTypewriter() {
     });
   };
 })();
+
+
+// ═══════════════ TICKER ═══════════════
+function renderTicker() {
+  const tips = {
+    ar: ['📖 ١٠٠ سؤال عن الإسلام — الشيخ محمد الغزالي','🏆 اجمع النقاط واربح الشارات','🌟 جرب وضع المستكشف الصغير','🤲 لا تنسَ الدعاء','⭐ اكتشف كنوز الكتاب'],
+    en: ['📖 100 Questions About Islam — Sheikh Mohammed Al-Ghazali','🏆 Earn points and badges','🌟 Try the Young Explorer mode','🤲 Remember to make dua','⭐ Discover the book\'s treasures'],
+    fr: ['📖 100 Questions sur l\'Islam — Cheikh Mohammed Al-Ghazali','🏆 Gagnez des points et des badges','🌟 Essayez le mode Jeune Explorateur','🤲 N\'oubliez pas le dua','⭐ Découvrez les trésors du livre']
+  };
+  const curLang = (typeof lang !== 'undefined' && lang) || document.documentElement.lang || 'ar';
+  const items = tips[curLang] || tips.ar;
+  const doubled = [...items, ...items];
+  const ticker = document.getElementById('tickerText');
+  if (!ticker) return;
+  ticker.innerHTML = doubled.map(t => `<span class="tc">&nbsp;&nbsp;${t}&nbsp;&nbsp;•</span>`).join('');
+  ticker.style.animation = `tickerMarquee ${items.length * 6}s linear infinite`;
+}
+
+// Auto-start ticker
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", renderTicker);
+} else {
+  renderTicker();
+}
