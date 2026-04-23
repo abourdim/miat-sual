@@ -1028,6 +1028,7 @@ function renderFavorites() {
   const t = T[lang];
   const favs = getFavorites();
   const container = document.getElementById('favoritesContainer');
+  if (!container) return;
   if (favs.length === 0) {
     container.innerHTML = `<div class="no-favorites">${t.noFavorites}</div>`;
     return;
